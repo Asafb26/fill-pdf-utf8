@@ -13,8 +13,8 @@ exports.generatePdf = function(data, templatePath, extendArgs, outputFile, callb
     generatorXFdf(data,templatePath,outputFile,function (err) {
         if(err)
             throw err;
-        let processArgs = [templatePath,'fontPath',path.dirname(__filename)+'\\lib\\simfang.ttf','fill_form','-', 'output','-','flatten','<'+outputFile.substring(0,outputFile.lastIndexOf('.'))+'.xfdf'+'>', outputFile];
-        let cmd = 'java -jar "'+path.dirname(__filename)+'\\lib\\fill_pdf_utf8.jar"',option = {
+        let processArgs = [templatePath,'fontPath',path.dirname(__filename)+'/lib/VarelaRound-Regular.ttf','fill_form','-', 'output','-','flatten','<'+outputFile.substring(0,outputFile.lastIndexOf('.'))+'.xfdf'+'>', outputFile];
+        let cmd = 'java -jar "'+path.dirname(__filename)+'/lib/fill_pdf_utf8.jar"',option = {
             encoding: 'utf8',
             timeout: 100000,
             maxBuffer: 200*1024,
